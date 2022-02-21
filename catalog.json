@@ -1,0 +1,100 @@
+{
+    "projectOwner": "Group4",
+    "projectName": "MySmartHome",
+    "lastUpdate": "2021-01-08 17:34",
+    "broker": "broker.hivemq.com",
+    "port": 1883,
+    "baseTopic": "IoT_project_G4",
+    "electricity_price (euro per kwh)": 0.188,
+    "usersList": {
+        "user1": {
+            "userName": "Enzo",
+            "userID": 1,
+            "topics": {
+                "controller": {
+                    "temperature": "IoT_project_G4/user1/house1/room1/temperature/device1",
+                    "co2": "IoT_project_G4/user1/house1/room1/co2/device2",
+                    "motion": "IoT_project_G4/user1/house1/room1/motion/device3",
+                    "infraction": "IoT_project_G4/user1/house1/room1/infraction/device3"
+                },
+                "statistics": {
+                    "temperature": "IoT_project_G4/user1/house1/room1/heaters/statistics",
+                    "co2": "IoT_project_G4/user1/house1/room1/co2/statistics",
+                    "infraction": "IoT_project_G4/user1/house1/infraction/statistics"
+                }
+            },
+            "houses": {
+                "house1": {
+                    "PasswordBot": "123456789",
+                    "chatIDs": [
+                        5070760110
+                    ],
+                    "rooms": {
+                        "room1": {
+                            "HeatersStatus": "on",
+                            "WindowsStatus": "close",
+                            "threshold_min_temperature": "19",
+                            "threshold_max_temperature": "24",
+                            "threshold_max_co2": 1200,
+                            "threshold_min_co2": 800,
+                            "HeaterPower": 200,
+                            "devices": {
+                                "device1": {
+                                    "deviceID": 1,
+                                    "deviceName": "DHT11",
+                                    "measureType": [
+                                        "temperature"
+                                    ],
+                                    "Heaters": "heaters_device1",
+                                    "availableServices": {
+                                        "MQTT": {
+                                            "serviceIP": "broker.hivemq.com",
+                                            "topic": "IoT_project_G4/house1/room1/temperature/1"
+                                        }
+                                    }
+                                },
+                                "device2": {
+                                    "deviceID": 2,
+                                    "deviceName": "CO2 concentration sensor",
+                                    "measureType": [
+                                        "co2"
+                                    ],
+                                    "Windows": "windows_device2",
+                                    "availableServices": {
+                                        "MQTT": {
+                                            "serviceIP": "broker.hivemq.com",
+                                            "topic": "IoT_project_G4/house1/room1/co2"
+                                        }
+                                    }
+                                },
+                                "device3": {
+                                    "deviceID": 3,
+                                    "deviceName": "Motion sensor",
+                                    "measureType": [
+                                        "Motion"
+                                    ],
+                                    "HolidaysStatus": "False",
+                                    "availableServices": {
+                                        "MQTT": {
+                                            "serviceIP": "broker.hivemq.com",
+                                            "topic": "IoT_project_G4/house1/room1/infraction"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "holidays": {
+                        "holidaysIndex": 1,
+                        "holidays1": {
+                            "value": {
+                                "e": "2022-02-25",
+                                "b": "2022-02-07"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
